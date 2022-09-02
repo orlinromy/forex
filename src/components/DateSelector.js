@@ -13,7 +13,7 @@ const DateSelector = (props) => {
               "Please input date before " +
                 new Date().toISOString().split("T")[0]
             );
-            e.target.value = new Date().toISOString().split("T")[0];
+            e.target.value = props.date;
           }
         }}
       ></input>

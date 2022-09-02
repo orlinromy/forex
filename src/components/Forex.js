@@ -76,7 +76,11 @@ const Forex = (props) => {
                 key={idx}
                 to={forex}
                 quote={
-                  forex === "USD" ? 1 : forexData.quotes["USD" + convertTo[idx]]
+                  isLoading
+                    ? 0
+                    : forex === "USD"
+                    ? 1
+                    : forexData.quotes["USD" + convertTo[idx]]
                 }
                 isLoading={isLoading}
               ></ForexCard>
