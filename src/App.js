@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Header from "./components/Header";
+import DateSelector from "./components/DateSelector";
+import Forex from "./components/Forex";
 
 function App() {
+  const [date, setDate] = useState();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <Header />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          alignItems: "center",
+          paddingBottom: "2rem",
+          paddingTop: "2rem",
+        }}
+      >
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Rates as of{" "}
+          {date
+            ? date
+            : new Date().toLocaleDateString("en-GB").replace(/\//g, "-")}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <DateSelector date={date} setDate={setDate} />
+      </div>
+      <Forex date={date} />
     </div>
   );
 }
