@@ -1,16 +1,23 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import Placeholder from "react-bootstrap/Placeholder";
 
 const ForexCard = (props) => {
   return (
-    <Card style={{ textAlign: "center" }}>
+    <Card
+      style={{ textAlign: "center", justifyContent: "center", width: "10rem" }}
+    >
       <Card.Header>{props.to}</Card.Header>
       <Card.Body>
-        <Card.Text style={{ fontWeight: "bold", fontSize: "1.25rem" }}>
-          {props.to === "USD"
-            ? (1 * 10000) / 10000
-            : parseInt(props.quote * 10000) / 10000}
-        </Card.Text>
+        {props.isLoading ? (
+          <Placeholder as={Card.Text} animation="wave">
+            <Placeholder xs={6} />
+          </Placeholder>
+        ) : (
+          <Card.Text style={{ fontWeight: "bold", fontSize: "1.25rem" }}>
+            {parseFloat(props.quote.toFixed(4))}
+          </Card.Text>
+        )}
       </Card.Body>
     </Card>
   );

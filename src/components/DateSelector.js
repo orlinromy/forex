@@ -1,18 +1,22 @@
 import React from "react";
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
 
-const DateSelector = () => {
+const DateSelector = (props) => {
   return (
     <div>
-      <InputGroup size="md" className="mb-3">
-        {/* <InputGroup.Date id="inputGroup-sizing-sm">Small</InputGroup.Date> */}
-        <Form.Control type="date" />
-        {/* <Form.Control
-          aria-label="Small"
-          aria-describedby="inputGroup-sizing-sm"
-        /> */}
-      </InputGroup>
+      <input
+        type="date"
+        onChange={(e) => {
+          if (e.target.value <= new Date().toISOString().split("T")[0]) {
+            props.setDate(e.target.value);
+          } else {
+            alert(
+              "Please input date before " +
+                new Date().toISOString().split("T")[0]
+            );
+            e.target.value = new Date().toISOString().split("T")[0];
+          }
+        }}
+      ></input>
     </div>
   );
 };

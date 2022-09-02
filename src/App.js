@@ -18,12 +18,12 @@ function App() {
           paddingTop: "2rem",
         }}
       >
-        <p>
+        <h4>
           Rates as of{" "}
           {date
-            ? date
+            ? new Date(date).toLocaleDateString("en-GB").replace(/\//g, "-")
             : new Date().toLocaleDateString("en-GB").replace(/\//g, "-")}
-        </p>
+        </h4>
         <DateSelector date={date} setDate={setDate} />
       </div>
       <Forex date={date} />
