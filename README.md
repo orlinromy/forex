@@ -16,11 +16,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Wireframe
 
-![wireframe](wireframe.jpg)
+![wireframe](readme_files/wireframe.jpg)
 
 From the wireframe above, I created the following component tree:
 
-![component tree](component-tree.jpg)
+![component tree](readme_files/component-tree.jpg)
 
 ## Setting up the project
 
@@ -52,7 +52,7 @@ npm start
 
 ## Development Process
 
-1. Draw out the wireframe and determine the components
+1. Draw the wireframe and determine the components
 2. Create component tree
 3. Read through currencylayer API and try calling the API using cURL, Postman, and fetch API
    When trying to call the API using fetch API, it returns the following
@@ -65,7 +65,8 @@ npm start
        }
    }
    ```
-   This is because the response URL in the `XMLHttpRequest` object changes `http://` to `https://`. To solve this, set the proxy in `package.json` to `http://api.currencylayer.com`, so that the browser sends the request as `http://localhost:3000`, and the proxy sends it forward as `http://api.currencylayer.com` (Reference: (LogRocket - Why you should use a proxy server with Create React App)[https://blog.logrocket.com/why-you-should-use-proxy-server-create-react-app/])
+   This is because the response URL in the `XMLHttpRequest` object changes `http://` to `https://`.
+   To solve this, set the proxy in `package.json` to `http://api.currencylayer.com`, so that the browser sends the request as `http://localhost:3000`, and the proxy sends it forward as `http://api.currencylayer.com` (Reference: [LogRocket - Why you should use a proxy server with Create React App](https://blog.logrocket.com/why-you-should-use-proxy-server-create-react-app/))
 4. Create the components based on the component tree
 
 ## Further Development
