@@ -15,7 +15,6 @@ const Forex = (props) => {
       const data = await axios.get(
         "/live?access_key=b5847a6283683681189fedff3e3169e5"
       );
-      console.log(data);
       setForexData(data.data);
     } catch (error) {
       console.log(error);
@@ -33,7 +32,6 @@ const Forex = (props) => {
           new Date(date).toISOString().split("T")[0]
         }`
       );
-      console.log(data);
       setForexData(data.data);
     } catch (error) {
       console.log(error);
