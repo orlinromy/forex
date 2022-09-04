@@ -6,7 +6,7 @@ A simple React web application that displays the latest and historical currency 
 
 ### Demo
 
-![demo](readme_files/forex-demo.gif)
+https://user-images.githubusercontent.com/41258857/188294169-c2246f33-7d55-42ab-9839-851928d6063f.mov
 
 ### Tech Stack/Libraries Used
 
