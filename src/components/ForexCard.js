@@ -5,7 +5,13 @@ import Placeholder from "react-bootstrap/Placeholder";
 const ForexCard = (props) => {
   return (
     <Card
-      style={{ textAlign: "center", justifyContent: "center", width: "10rem" }}
+      style={{
+        textAlign: "center",
+        justifyContent: "center",
+        marginLeft: "2rem",
+        marginRight: "2rem",
+        minWidth: "118px",
+      }}
     >
       <Card.Header>{props.to}</Card.Header>
       <Card.Body>
@@ -15,7 +21,9 @@ const ForexCard = (props) => {
           </Placeholder>
         ) : (
           <Card.Text style={{ fontWeight: "bold", fontSize: "1.25rem" }}>
-            {parseFloat(props.quote.toFixed(4))}
+            {props.quote.toLocaleString("en-US", {
+              minimumFractionDigits: 4,
+            })}
           </Card.Text>
         )}
       </Card.Body>

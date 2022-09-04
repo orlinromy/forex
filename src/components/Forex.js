@@ -66,10 +66,15 @@ const Forex = (props) => {
 
   return (
     <Container>
-      <Row style={{ justifyContent: "center" }}>
+      <Row className="align-items-center">
         {convertTo.map((forex, idx) => {
           return (
-            <Col key={idx} sm={3} style={{ paddingBottom: "2rem" }}>
+            <Col
+              key={idx}
+              sm={3}
+              className="justify-content-md-center"
+              style={{ paddingBottom: "2rem" }}
+            >
               <ForexCard
                 key={idx}
                 to={forex}
